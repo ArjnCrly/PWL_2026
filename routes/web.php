@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\WelcomeController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index']);
@@ -29,3 +30,6 @@ Route::get('/user/{name?}', function ($name='John') {
 Route::get('/posts/{post}/comments/{comment}', function ($postId, $commentId){
     return 'Pos ke-'.$postId." Komentar ke-: ".$commentId;
 });
+
+Route::get('/greeting', [WelcomeController::class, 'greeting']);
+
